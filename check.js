@@ -41,5 +41,4 @@ testAll = ${tests
 `
 
 const source = hsSrc + main + testAll;
-console.log(source)
 fs.writeFileSync(fileName + '.hs', source, { flag : 'w+' });
