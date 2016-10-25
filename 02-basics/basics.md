@@ -307,24 +307,35 @@ fib n = fib (n - 1) + fib (n - 2)
 
 ---
 
-<br>**Важно:** Отделните patterns се проверяват в реда, в който са дефинирани.
+## Pattern matching - wildcard
+
+В случаите, в които не ползваме променливата, е желателно да я именоваме `_`. `_` е специален pattern, който се тълкува като "игнорирай" или "не ме интересува". Само по себе си това не звучи много полезно, но помага на компилатора в създаване на по-лесно разбираеми диагностични съобщения и предпазване от механични грешки.
+<br>
 
 ```hs
-encodeBool :: Int -> Int
-encodeBool 0 = 0
-encodeBool n = 1
+intToBool :: Int -> Bool
+intToBool 0 = False
+intToBool _ = True   -- everything other than 0
+                     -- (we don't care exactly what)
+```
 
-encodeBool' :: Int -> Int
-encodeBool' n = 1
-encodeBool' 0 = 0
+---
+
+<br>**Важно:** Отделните patterns се проверяват в реда, в който са дефинирани.
+<br>
+
+```hs
+intToBool' :: Int -> Bool
+intToBool' _ = True
+intToBool' 0 = False
 ```
 
 ```hs
-> encodeBool 0
-0
+> intToBool 0
+False
 
-> encodeBool' 0
-1
+> intToBool' 0
+True
 ```
 
 ---
@@ -381,6 +392,72 @@ fib2' :: Int -> Int
 fib2' n | n <= 0    = 0
         | n == 1    = 1
         | otherwise = fib2' (n - 1) + fib2' (n - 2)
+```
+
+---
+
+## Пълнота на функция
+
+Съществуват функции, които не са добре дефинирани за всяка стойност на всеки от параметрите си. Най-базовата такава функция е операцията деление - на `0` не се дели. Функциите с това свойство се наричат `partial` (непълни). Терминът, който гласи, че дадена фунцкция е добре дефинирана за всички стойности на всичките си параметри, се нарича `total`.
+
+---
+
+## Непълни функции - warnings
+
+Непълните функции са опасни, затова и компилаторът в режим на показване на всички грешки `-Wall` се оплаква.
+
+```hs
+minValue :: Int -> Int -> Int
+minValue x y | x < y = x
+             | x > y = y
+```
+
+```text
+In an equation for ‘minValue’:
+    Patterns not matched: _ _
+```
+
+---
+
+## Непълни функции - заглушаване
+
+За заглушаване на създадения warning, вариантите са:
+ - смяна логикат и/или сигнатурата на функцията
+ - ако горното не е разумно, добавяне на runtime грешка чрез `error`
+<br>
+
+```hs
+minValue' :: Int -> Int -> Int
+minValue' x y | x < y     = x
+              | otherwise = y  -- x >= y
+```
+
+```hs
+myDivision :: Int -> Int -> Int
+myDivision _ 0 = error "Division by zero"
+myDivision n m = quot n m
+```
+
+---
+
+<br>**Забележка:** Създаването и ползването на partial функции е лоша практика. В някои случаи, обаче, избягването им създава много главоболия и е практически неоправдано. В тези случаи (пр. делението), добрият подход е да се използва `error`. `error` трябва да се третира като крайна мярка - грешка, която не може да бъде хваната и програмата се чупи.
+
+---
+
+## Непълни функции - warnings ...
+
+Понякога тези грешки са безобидни и са причинени от факта че компилаторът не знае семантиката на използваните функции:
+
+```hs
+paradoxical :: Int
+paradoxical | True == False =  42
+            | True /= False = -42
+```
+
+```text
+Pattern match(es) are non-exhaustive
+    In an equation for ‘paradoxical’:
+        Patterns not matched:
 ```
 
 ---
@@ -487,6 +564,14 @@ restOrEmpty :: [Int] -> [Int]
 restOrEmpty []     = []
 restOrEmpty (x:xs) = xs
 ```
+<!--
+  lecturer note:
+    - `firstOrDefault` vs `head`
+    - `restOrEmpty` vs `tail`
+  
+  ask students what do they expect from
+  head :: [Int] -> Int
+-->
 
 ---
 
