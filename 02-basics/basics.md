@@ -6,6 +6,15 @@
 Въведение в Haskell<br/>Основен синтаксис и типове
 ==
 
+<br>
+<br>
+<br>
+
+Георги Наков, [nakov.gl at gmail com](mailto:nakov.gl+tues@gmail.com)  
+Марин Маринов, [marinov.ms+tues at gmail com](mailto:marinov.ms+tues@gmail.com)
+
+Технологично училище "Електронни Системи"  
+19 Октомври 2016г.
 
 ---
 
