@@ -30,7 +30,7 @@ main :: IO ()
 main = putStrLn $ printRes testAll
     where printRes True = "Success!"
 
-`
+`;
 
 const testAll = `
 testAll :: Bool
@@ -38,7 +38,7 @@ testAll = ${tests
     .map(([expr, res]) => `(${expr}) == ${res} || error ${JSON.stringify(expr + ' == ' + res)}`)
     .join('\n           && ')
 }
-`
+`;
 
 const source = hsSrc + main + testAll;
-fs.writeFileSync(fileName + '.hs', source, { flag : 'w+' });
+console.log(source);
