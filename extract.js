@@ -6,7 +6,15 @@ function fail(msg) {
     process.exit(1);
 }
 
-const fileName = process.argv[2];
+function partition(arr, predicate) {
+    return [ arr.filter(predicate), arr.filter(x => !predicate(x)) ];
+}
+
+const [flags, args] = partition(process.argv.slice(2), x => /^--/.test(x));
+
+const withTests = flags.indexOf('--tests') !== -1;
+
+const fileName = args[0];
 fs.existsSync(fileName) || fail(`File "${fileName}" does not exist!`);
 
 const contents = fs.readFileSync(fileName, "utf-8");
@@ -19,11 +27,12 @@ const tests = [];
 const hsSrc = parts
         .filter(val => /^\s*/.exec(val)[0].length < 5)
         .map(val => val.replace(/\s*--.*/g, ''))
-        .map(val => val.replace(/^>(.*)\n(.*)\n/gm, (_, expr, res) => {
+        .map(val => val.replace(/^> *(.*)\n(.*)\n/gm, (_, expr, res) => {
             tests.push([expr, res]);
             return '';
         }))
-        .join('');
+        .join('')
+        .replace(/\n{3,}/g, '\n\n');
 
 const main = `
 main :: IO ()
@@ -40,5 +49,5 @@ testAll = ${tests
 }
 `;
 
-const source = hsSrc + main + testAll;
-console.log(source);
+console.log(withTests ? hsSrc + main + testAll
+                      : hsSrc);
