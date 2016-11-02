@@ -26,33 +26,44 @@ clear   = 0
 -- Exercise 1
 
 getLastDigit :: Int -> Int
-getLastDigit = undefined
+getLastDigit x = mod x 10 
 
 
 dropLastDigit :: Int -> Int
-dropLastDigit = undefined
+dropLastDigit x = quot x 10 
 
 
 -- Exercise 2
 
 getReverseDigits :: Int -> [Int]
-getReverseDigits = undefined
+getReverseDigits x | x < 10    = [x]
+                   | otherwise = getLastDigit x : getReverseDigits (dropLastDigit x)
 
 
 -- Exercise 3
 
 toChar :: Int -> Char
-toChar = undefined
+toChar 0 = '0'
+toChar 1 = '1'
+toChar 2 = '2'
+toChar 3 = '3'
+toChar 4 = '4'
+toChar 5 = '5'
+toChar 6 = '6'
+toChar 7 = '7'
+toChar 8 = '8'
+toChar 9 = '9'
+toChar _ = error "Not a digit"
 
 
 -- Exercise 4
 
 itoaLoop :: String -> [Int] -> String
-itoaLoop = undefined
-
+itoaLoop acc []     = acc
+itoaLoop acc (x:xs) = itoaLoop (toChar x : acc) xs
 
 itoa :: Int -> String
-itoa = undefined
+itoa num = itoaLoop [] (getReverseDigits num) 
 
 
 -- Exercise 5
@@ -66,8 +77,16 @@ mkTextStyle color = mkStyle (color + textStyle)
 
 
 getStyle :: String -> String
-getStyle = undefined
-
+getStyle "blk" = mkTextStyle black
+getStyle "red" = mkTextStyle red
+getStyle "grn" = mkTextStyle green
+getStyle "ylw" = mkTextStyle yellow
+getStyle "blu" = mkTextStyle blue
+getStyle "mgt" = mkTextStyle magenta
+getStyle "cyn" = mkTextStyle cyan
+getStyle "wht" = mkTextStyle white
+getStyle "clr" = mkStyle clear
+getStyle xs    = "<" ++ xs ++ ">"
 
 -- Exercise 6
 
@@ -82,7 +101,9 @@ bleach []            = []
 
 
 colorize :: String -> String
-colorize = undefined
+colorize ('<':x:y:z:'>':rest) = getStyle [x, y, z] ++ colorize rest
+colorize (x:xs)               = x : colorize xs
+colorize []                   = []
 
 
 -- Extra
