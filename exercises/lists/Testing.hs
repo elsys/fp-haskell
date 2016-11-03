@@ -35,14 +35,17 @@ ptrEq x y = isTrue# (reallyUnsafePtrEquality# x y)
 throwsError :: a
 throwsError = error "throwsError"
 
-testEq :: Eq a => a -> a -> Bool
-testEq arg res
-    | not (res `ptrEq` throwsError) = arg == res
-
-    | otherwise  = unsafePerformIO $
+isError :: a -> Bool
+isError x = unsafePerformIO $
         handle (\(_ :: SomeException) -> return True) $ do
-            let !_ = arg == res
+            let !_ = x
             return False
+
+testEq :: Eq a => a -> a -> Bool
+testEq res xpect = unsafePerformIO $
+        handle (\(_ :: SomeException) -> return (xpect `ptrEq` throwsError && isError res)) $ do
+            let !rtv = res == xpect
+            return rtv
 
 runTest :: Test -> Maybe Failure
 runTest (Test s f as) = case filter (not . f) as of
