@@ -1,6 +1,5 @@
 import Data.Char(toLower)
 
-
 isChar :: Char -> Bool
 isChar = undefined
 
@@ -27,6 +26,7 @@ dropN :: Int -> String -> String
 dropN = undefined
 
 
---Assume we'll be decoding only valid words
+-- Assume we'll be decoding only valid words
 decode :: String -> String
 decode = undefined
+
