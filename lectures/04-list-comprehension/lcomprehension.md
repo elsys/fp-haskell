@@ -2,9 +2,15 @@
     page_number:true
     *page_number:false
 -->
+<!--
+```hs
+import Data.Char (toUpper)
+
+```
+-->
 
 List comprehension<br/>
-==
+====
 
 <br>
 <br>
@@ -42,9 +48,8 @@ List comprehension<br/>
 <br/>
 ```hs
 > [ x*2 | x <- [1..4]]
-
   [2, 4, 6, 8]
-  ```
+```
 
 ---
 
@@ -68,7 +73,6 @@ List comprehension<br/>
 - Може да взимаме няколко променливи, всяка взета от различен списък
 ```hs
 > [[x, y, z] | x <- [1..3], y <- [10,11], z <- [20,21]]
-
   [[1, 10, 20], [1, 10, 21], [1, 11, 20], [1, 11, 21],
    [2, 10, 20], [2, 10, 21], [2, 11, 20], [2, 11, 21],
    [3, 10, 20], [3, 10, 21], [3, 11, 20], [3, 11, 21]]
@@ -87,24 +91,22 @@ List comprehension<br/>
 ## List comprehension
 - Когато задаваме повече от един списък, може да използваме всички предишни променливи при дефиницията на списъка
 ```hs
- > [ [x, y] | x <- [1..4], y <-[1..x]]
-
-   [ [1, 1],
-     [2, 1], [2, 2],
-     [3, 1], [3, 2], [3, 3]
-     [4, 1], [4, 2], [4, 3], [4, 4] ]
+> [ [x, y] | x <- [1..4], y <-[1..x]]
+  [ [1, 1],
+    [2, 1], [2, 2],
+    [3, 1], [3, 2], [3, 3],
+    [4, 1], [4, 2], [4, 3], [4, 4] ]
 ```
 ---
 
 ## List comprehension
 - Може да вгнездваме list comprehension-и
 ```hs
-removeEs :: [String]->[String]
+removeEs :: [String] -> [String]
 removeEs someWords = 
-   [ [c | c <- word, c /= 'е', c /= 'E']
-     | word <- someWords]]
+   [ [c | c <- word, c /= 'e', c /= 'E']
+     | word <- someWords]
      
-> removeЕs ["These", "are", "some", "good", "words"]
-  
-  ["Ths", "r", "som", "good", "words"]
+> removeEs ["These", "are", "some", "good", "words"]
+  ["Ths", "ar", "som", "good", "words"]
 ```
