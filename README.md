@@ -17,6 +17,12 @@
 Задачи от часа: [listcomp.md](exercises/list-comp/listcomp.md) ([list-comp](exercises/list-comp))  
 Домашно: [Пермутации](exercises/permutations/perm.md) ([permutations](exercises/permutations))
 
+- **Седмица 5 (16.11.2016)**  
+[Полиморфични функции ](lectures/05-polymorphism-let-where/poly.md)  
+[Локални променливи let и where](lectures/05-polymorphism-let-where/let-where.md)  
+Задачи от часа: [Histogram](exercises/histogram/histogram.md) ([histogram](exercises/histogram))  
+Домашно: [Форматиране на данни в Markdown таблица](exercises/md-table/MdTable.md) ([md-table](exercises/md-table))
+
 ---
 
 **Допълнителни материали**  
