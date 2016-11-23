@@ -1,6 +1,6 @@
 module Histogram where
 
-baseString::String
+baseString :: String
 baseString = ['0'..'9']
 
 count :: (Eq a) => a -> [a] -> Int
@@ -26,3 +26,4 @@ freq2hist x
 histogram :: [Int] -> String
 histogram x = unlines (reverse histLines ++ [baseString])
     where histLines = freq2hist (frequency x)
+
