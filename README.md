@@ -1,3 +1,11 @@
+## Функционално програмиране с Haskell
+
+Лектори:
+ - Георги Наков, [nakov.gl at gmail com](mailto:nakov.gl+tues@gmail.com)
+ - Марин Маринов, [marinov.ms+tues at gmail com](mailto:marinov.ms+tues@gmail.com)
+
+### Лекции и Упражнения
+
 - **Седмица 1 (19.10.2016)**  
 [Относно курса](lectures/00-setup/setup.md)  
 [Що е то функционално програмиране? История на Haskell](lectures/01-intro/intro.md)  
@@ -23,8 +31,14 @@
 Задачи от часа: [Histogram](exercises/histogram/histogram.md) ([histogram](exercises/histogram))  
 Домашно: [Форматиране на данни в Markdown таблица](exercises/md-table/MdTable.md) ([md-table](exercises/md-table))
 
----
+- **Седмица 6 (23.11.2016)**  
+[Tuples](lectures/06-adts-and-tuples/tuples.md)  
+[Algebraic Data Types (ADTs)](lectures/06-adts-and-tuples/ADTs.md)  
+Задачи от часа: [Markdown](exercises/md-processor/mdparser.md) ([md-processor](exercises/md-processor))  
+Домашно: **Скоро, очакваме старите**
 
-**Допълнителни материали**  
+
+### Допълнителни материали
 [Литература, среда и др.](lectures/00-setup/extra.md)
+
 
