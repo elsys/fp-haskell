@@ -35,10 +35,9 @@
 [Tuples](lectures/06-adts-and-tuples/tuples.md)  
 [Algebraic Data Types (ADTs)](lectures/06-adts-and-tuples/ADTs.md)  
 Задачи от часа: [Markdown](exercises/md-processor/mdparser.md) ([md-processor](exercises/md-processor))  
-Домашно: **Скоро, очакваме старите**
+Домашно: задачи 2 - 5 от [Markdown](exercises/md-processor/mdparser.md) ([md-processor](exercises/md-processor))
 
 
 ### Допълнителни материали
 [Литература, среда и др.](lectures/00-setup/extra.md)
-
 

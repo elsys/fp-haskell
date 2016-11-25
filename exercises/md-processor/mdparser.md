@@ -7,7 +7,7 @@ Markdown
 **Markdown** има прост синтаксис и поддържа няколко основни операции за стилизиране на текст:
   - обикновния текст се пише директно. Нов ред започва след два `space`-а.
   - **bold** текст се огражда с `**` (*пример:* `**текст**`)
-  - *italic* текст се огражда с `*` (*пример:* `*текст*`)
+  - _italic_ текст се огражда с `_` (*пример:* `_текст_`)
   - заглавията се пишат с `#`(последван от `space`) и са 4 размера:
     - # Огромен - `# огромен`
     - ## Голям - `## голям`
@@ -22,12 +22,31 @@ Markdown
   ---
 
 ## Задача 1
-Моделирайте синтаксиса на markdown с `ADT` `data Element` (използвайте повече от 1 `ADT`, ако се налага). Вземете предвид, че списъците се вгнездват и даден елемент може да е едновременно и **bold**, и *italic* - `***eто така***`.
+Моделирайте синтаксиса на markdown с `ADT` `data Element` (използвайте повече от 1 `ADT`, ако се налага). Вземете предвид, че даден елемент може да е едновременно и **bold**, и _italic_ - `_**eто така**_`.
+
+#### Решение:
+```hs
+
+data Lang = Haskell | C | Python | None deriving (Eq, Show)
+data HeadingSize = H1 | H2 | H3 | H4 deriving (Eq, Show)
+data ListMode = Ordered | Unordered deriving (Eq, Show)
+
+data Element =
+        Text String
+      | Bold Element
+      | Italic Element
+      | Underline Element
+      | Heading HeadingSize String
+      | CodeBlock Lang [String]
+      | List ListMode [Element]
+      | HorizontalRule
+      deriving (Eq, Show)
+
+```
 
 ## Задача 2
 Напишете функция `render2md :: Element -> String`. Тя ще взима единичен елемент и ще връща подходящото му текстово представяне (описано по-горе).
 #### Примерен изход
-Aко допуснем, че имаме стойности `Bold "This is a text"` и `HorizontalRule` на типа `Element`:
 ```
 >render2md (Bold "This is a text")
 **This is a text**
@@ -40,15 +59,15 @@ Aко допуснем, че имаме стойности `Bold "This is a text
 Напишете функция `render2html :: Element -> String`, която работи по същия начин както `render2md`, но генерира `html`.
 #### Примерен изход
 ```
->render2md (Bold "This is a text")
+>render2html (Bold "This is a text")
 <b>This is a text</b>
 
->render2md HorizontalRule
+>render2html HorizontalRule
 <hr/>
 ```
 
 ## Задача 4
-Напишете функция `robberify :: Element -> Element`. Тя ще взима елемент и ще връща текста, кодиран в (Robber's language ). (`map`-ваме `robberify` в/у `Element`). Aко елементът не е текстов или е `code block`, остава същия.
+Напишете функция `robberify :: Element -> Element`. Тя ще взима елемент и ще връща текста, кодиран в [Robber's language](../secret-lang/Secret-lang.md) (`map`-ваме `robberify` в/у `Element`). Aко елементът не е текстов или е `code block`, остава същия.
 
 #### Примерен изход
 ```
@@ -60,4 +79,19 @@ Aко допуснем, че имаме стойности `Bold "This is a text
 ```
 
 ## Задача 5
-Напишете функция `toc :: [Element] -> Element` (*`Toc` e съкратено oт `table of contents` и e списък със съдържанието напр. в книги, учебници*). `toc` ще получава списък от елементи и ще генерира номериран списък със съдържание, като  елементите му ще бъдат всички огромни заглавия.
+Напишете функция `toc :: [Element] -> Element` (*`Toc` e съкратено oт `table of contents` и e списък със съдържанието напр. в книги, учебници*). `toc` ще получава списък от елементи и ще генерира номериран списък със съдържание, като елементите му ще бъдат всички `H4` заглавия.
+
+#### Примерен изход
+```hs
+myDoc = [Heading H4 "Markdown processor",
+         Heading H2 "Basics"
+         Text "Markdown is a lightweight markup language with plain text formatting syntax",
+         Heading H4 "Markdown syntax"]
+
+> toc myDoc
+List Ordered [ Text "Markdown processor", Text "Markdown syntax"]
+
+> render2md (toc myDoc)
+1. Markdown processor
+2. Markdown syntax
+```
