@@ -37,6 +37,9 @@
 Задачи от часа: [Markdown](exercises/md-processor/mdparser.md) ([md-processor](exercises/md-processor))  
 Домашно: задачи 2 - 5 от [Markdown](exercises/md-processor/mdparser.md) ([md-processor](exercises/md-processor))
 
+- **Седмица 7 (30.11.2016)**  
+Задачи от часа: [Funky.hs](exercises/funky/Funky.hs) ([funky](exercises/funky))  
+
 
 ### Допълнителни материали
 [Литература, среда и др.](lectures/00-setup/extra.md)
