@@ -1,6 +1,4 @@
 
--- default: provided
-
 module AST where
 
 data ArithOp = Add | Sub | Mul | Div

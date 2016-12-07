@@ -1,4 +1,3 @@
--- default: provided
 
 {-# OPTIONS_GHC -Wall #-}
 
@@ -18,6 +17,7 @@ import Control.Applicative ((<|>), many)
 import Data.Either.Combinators (mapLeft)
 
 
+parse :: String -> Either String Program
 parse src = mapLeft show $ P.parse parseProgram "" src
 
 
@@ -110,9 +110,11 @@ parseWs :: Parser String
 parseWs = many1 (oneOf " \n\t")
 
 
+skipWs :: Parser ()
 skipWs = optional parseWs
 
 
+parseId :: Parser String
 parseId = do firstChar <- letter <|> char '_'
              rest      <- many (letter <|> char '_' <|> digit)
 
