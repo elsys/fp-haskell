@@ -38,7 +38,7 @@
 Домашно: задачи 2 - 5 от [Markdown](exercises/md-processor/mdparser.md) ([md-processor](exercises/md-processor))
 
 - **Седмица 7 (30.11.2016)**  
-Задачи от часа: [hack.md](exercises/funky/hack.md) ([funky](exercises/funky))  
+Задачи от часа: [Funky.hs](exercises/funky/03-all/Funky.hs) ([funky](exercises/funky/03-all))  
 
 - **Седмица 8 (07.12.2016)**  
 [Имплементиране на прост интерпретатор](lectures/08-compilers/compilers.md)  
