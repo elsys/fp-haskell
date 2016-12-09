@@ -14,11 +14,11 @@ import Text.Parsec.Combinator (many1)
 
 import Control.Applicative ((<|>), many)
 
-import Data.Either.Combinators (mapLeft)
-
 
 parse :: String -> Either String Program
 parse src = mapLeft show $ P.parse parseProgram "" src
+    where mapLeft f (Left x)  = Left (f x)
+          mapLeft _ (Right x) = Right x
 
 
 parseUnsafe :: String -> Program
