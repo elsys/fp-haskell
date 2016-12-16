@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wall #-}
+
 module Histogram where
 
 baseString :: String

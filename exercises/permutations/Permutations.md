@@ -1,3 +1,9 @@
+<!--
+```hs
+import Permutations
+
+```
+-->
 
 Пермутации
 ====

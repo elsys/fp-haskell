@@ -22,20 +22,20 @@
 
 - **Седмица 4 (09.11.2016)**  
 [List comprehension ](lectures/04-list-comprehension/lcomprehension.md)  
-Задачи от часа: [listcomp.md](exercises/list-comp/listcomp.md) ([list-comp](exercises/list-comp))  
-Домашно: [Пермутации](exercises/permutations/perm.md) ([permutations](exercises/permutations))
+Задачи от часа: [ListComp.md](exercises/list-comp/ListComp.md) ([list-comp](exercises/list-comp))  
+Домашно: [Пермутации](exercises/permutations/Permutations.md) ([permutations](exercises/permutations))
 
 - **Седмица 5 (16.11.2016)**  
 [Полиморфични функции ](lectures/05-polymorphism-let-where/poly.md)  
 [Локални променливи let и where](lectures/05-polymorphism-let-where/let-where.md)  
-Задачи от часа: [Histogram](exercises/histogram/histogram.md) ([histogram](exercises/histogram))  
+Задачи от часа: [Histogram](exercises/histogram/Histogram.md) ([histogram](exercises/histogram))  
 Домашно: [Форматиране на данни в Markdown таблица](exercises/md-table/MdTable.md) ([md-table](exercises/md-table))
 
 - **Седмица 6 (23.11.2016)**  
 [Tuples](lectures/06-adts-and-tuples/tuples.md)  
 [Algebraic Data Types (ADTs)](lectures/06-adts-and-tuples/ADTs.md)  
-Задачи от часа: [Markdown](exercises/md-processor/mdparser.md) ([md-processor](exercises/md-processor))  
-Домашно: задачи 2 - 5 от [Markdown](exercises/md-processor/mdparser.md) ([md-processor](exercises/md-processor))
+Задачи от часа: [Markdown](exercises/md-processor/MDProcessor.md) ([md-processor](exercises/md-processor))  
+Домашно: задачи 2 - 5 от [Markdown](exercises/md-processor/MDProcessor.md) ([md-processor](exercises/md-processor))
 
 - **Седмица 7 (30.11.2016)**  
 [Параметричен полиморфизъм с Algebraic Data Types](lectures/07-polymorphic-adts/polymorphic-ADTs.md)  
@@ -43,10 +43,10 @@
 
 - **Седмица 8 (07.12.2016)**  
 [Имплементиране на прост интерпретатор](lectures/08-compilers/compilers.md)  
-Задачи от часа: [Funky](exercises/funky/funky.md) ([funky](exercises/funky))  
+Задачи от часа: [Funky](exercises/funky/Funky.md) ([funky](exercises/funky))  
 
 - **Седмица 9 (14.12.2016)**  
-Задачи от часа: [qsort.c](exercises/qsort/qsort.c), [Qsort.hs](exercises/qsort/Qsort.hs), [plotter.hs](exercises/plotter/plotter.hs)  
+Задачи от часа: [qsort.c](exercises/qsort/qsort.c), [Qsort.hs](exercises/qsort/Qsort.hs), [Plotter.hs](exercises/plotter/Plotter.hs)  
 
 ### Допълнителни материали
 [Литература, среда и др.](lectures/00-setup/extra.md)
