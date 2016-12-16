@@ -38,13 +38,15 @@
 Домашно: задачи 2 - 5 от [Markdown](exercises/md-processor/mdparser.md) ([md-processor](exercises/md-processor))
 
 - **Седмица 7 (30.11.2016)**  
+[Параметричен полиморфизъм с Algebraic Data Types](lectures/07-polymorphic-adts/polymorphic-ADTs.md)  
 Задачи от часа: [Funky.hs](exercises/funky/03-all/Funky.hs) ([funky](exercises/funky/03-all))  
 
 - **Седмица 8 (07.12.2016)**  
 [Имплементиране на прост интерпретатор](lectures/08-compilers/compilers.md)  
-[Funky](lectures/08-compilers/funky.md)  
-Задачи от часа: [funky](exercises/funky)  
+Задачи от часа: [Funky](exercises/funky/funky.md) ([funky](exercises/funky))  
 
+- **Седмица 9 (14.12.2016)**
+Задачи от часа: [qsort.c](exercises/qsort/qsort.c), [Qsort.hs](exercises/qsort/Qsort.hs), [plotter.hs](exercises/plotter/plotter.hs)  
 
 ### Допълнителни материали
 [Литература, среда и др.](lectures/00-setup/extra.md)

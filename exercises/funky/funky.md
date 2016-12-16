@@ -8,30 +8,30 @@ Funky
 ## 1. Аритметични операции
 
 Да разгледаме най-простия израз `"2+22"`. Kак може да го обработим? След като сме го parsе-нали, сме получили готова структура. Каква може да бъде тази структура? Един вариант е например да са два списъка `numbers :: [Int]` и `operations::[Char]`. Да видим дали не може да се справим по-добре с `ADT`:
-```hs
+```hs     
 data Expression = Add Int Int
 ```
 Операцията `+` я представяме с конструктура `Add`.  Функцията, която оценява израза, ще изглежда по-следния начин:
-```hs
-   eval :: Expresion -> Int
-   eval (Add x y) = x + y
+```hs     
+eval :: Expresion -> Int
+eval (Add x y) = x + y
 ```
 Сега вече може да сметнем `2+22`, но може ли да смятаме произволни изрази `2+3+4`, `(2+2)+2+2`. Ако разгледаме по-внимателно `(1+2) + (3+4)`, може да видим, че е съставен от рекурсивни подизрази и да променим `Expression` да отразява това:
 ```hs
 data Expression = AddI Int Int | AddE Expression Expression
 ```
 А `еval` става:
-```hs
-еval (AddI x y) = x + y
-eval (AddE ex + ey) = eval ex + eval ey
+```hs     
+еval (AddI x y)   = x + y
+eval (AddE ex ey) = eval ex + eval ey
 ```
 
 Сега вече може да смятаме неща като `1+2`, `(1+2)+(2+1)`, но все още не `1 + (2+2)``. Лесно може да решим проблем с
-```hs
+```hs     
 data Expression = AddII Int Int
-                  | AddEE Expression Expression
-                  | AddIE Int Expression
-                  | AddEI Expression Int.
+                | AddEE Expression Expression
+                | AddIE Int Expression
+                | AddEI Expression Int
 ```
 Всъщност туко-що написахме всички възможни комбинации за две елемента между `Expression` и `Int`. Може ли да го съкратим? След доста взиране, може да видим, че това е възможно, като накараме просто число (`4` например) само по себе си да е `Expression` - например като `Constant Int`. Taка `Expression` и `eval` добиват вида:
 ```hs
@@ -58,7 +58,7 @@ x = 2
 `data VarDecl = VarDecl String Expr`.
 
 Използването на променлива обаче е израз. Така `Expression` става:
-```hs
+```hs     
 data Expr = Constant Int
           | Var String
           | Arith ArithOp Expr Expr
@@ -70,7 +70,7 @@ data Expr = Constant Int
 
 Първо да си напишем нова функция, която изпълнява програмата. Освен да оценява израза, ще трябва да обработва дефинициите на променливи и променя средата. След това да променим `eval` така че да може да оценява променливи и да се съобразява с текущата среда.
 
-```hs
+```hs     
 runProgram :: Program -> Int
 runProgram (Program decls body) = eval (mkScope [] decls) body
     where mkScope sc []                       = sc
@@ -78,7 +78,7 @@ runProgram (Program decls body) = eval (mkScope [] decls) body
 ```
 `mkScope` е помощната функция, която създава средата.
 
-```hs
+```hs     
 eval :: Scope -> Expr -> Int
 
 eval scope (Var name) = unbox (lookup name scope)

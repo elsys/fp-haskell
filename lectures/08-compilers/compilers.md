@@ -1,5 +1,19 @@
+<!--
+    page_number:true
+    *page_number:false
+-->
+
 Имплементиране на прост интерпретатор
 =====
+
+<br>
+
+Георги Наков, [nakov.gl at gmail com](mailto:nakov.gl+tues@gmail.com)  
+Марин Маринов, [marinov.ms+tues at gmail com](mailto:marinov.ms+tues@gmail.com)
+
+
+Технологично училище "Електронни Системи"  
+07 Декември 2016г.
 
 ---
 
@@ -76,7 +90,7 @@ Tokens[] getTokens(String str) {
 
 ## Parser
 
-```hs
+```hs     
 grammar Term = Number
              | Number "+" Term
 
