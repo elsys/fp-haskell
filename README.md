@@ -13,7 +13,7 @@
 
 - **Седмица 2 (26.10.2016)**  
 [Въведение част 2 Lists, Guards and Pattern matching](lectures/03-lists-guards-patterns/lists-guards-patterns.md)  
-Домашно: [Езика на разбойниците](exercises/secret-lang/Secret-lang.md) ([secret-lang](exercises/secret-lang))
+Домашно: [Езика на разбойниците](exercises/secret-lang/SecretLang.md) ([secret-lang](exercises/secret-lang))
 
 - **Седмица 3 (02.11.2016)**  
 [Работа със списъци](exercises/lists/Lists.md)  
