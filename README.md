@@ -18,11 +18,11 @@
 - **Седмица 3 (02.11.2016)**  
 [Работа със списъци](exercises/lists/Lists.md)  
 Задачи от часа: [Lists.hs](exercises/lists/Lists.hs), [Colorize](exercises/colorize/Colorize.md) ([colorize](exercises/colorize))  
-Домашно: [Домашно Lists](exercises/lists/ListsHW.md) ([lists](exercises/lists))  
+Домашно: [Домашно Lists](exercises/lists/ListsHW.md) ([lists](exercises/lists))
 
 - **Седмица 4 (09.11.2016)**  
 [List comprehension ](lectures/04-list-comprehension/lcomprehension.md)  
-Задачи от часа: [ListComp.md](exercises/list-comp/ListComp.md) ([list-comp](exercises/list-comp))  
+Задачи от часа: [List comprehensions](exercises/list-comp/ListComp.md) ([list-comp](exercises/list-comp))  
 Домашно: [Пермутации](exercises/permutations/Permutations.md) ([permutations](exercises/permutations))
 
 - **Седмица 5 (16.11.2016)**  
@@ -39,14 +39,18 @@
 
 - **Седмица 7 (30.11.2016)**  
 [Параметричен полиморфизъм с Algebraic Data Types](lectures/07-polymorphic-adts/polymorphic-ADTs.md)  
-Задачи от часа: [Funky.hs](exercises/funky/03-all/Funky.hs) ([funky](exercises/funky/03-all))  
+Задачи от часа: [Funky.hs](exercises/funky/03-all/Funky.hs) ([funky](exercises/funky/03-all))
 
 - **Седмица 8 (07.12.2016)**  
 [Имплементиране на прост интерпретатор](lectures/08-compilers/compilers.md)  
-Задачи от часа: [Funky](exercises/funky/Funky.md) ([funky](exercises/funky))  
+Задачи от часа: [Funky](exercises/funky/Funky.md) ([funky](exercises/funky))
 
 - **Седмица 9 (14.12.2016)**  
-Задачи от часа: [qsort.c](exercises/qsort/qsort.c), [Qsort.hs](exercises/qsort/Qsort.hs), [Plotter.hs](exercises/plotter/Plotter.hs)  
+Задачи от часа: [qsort.c](exercises/qsort/qsort.c), [Qsort.hs](exercises/qsort/Qsort.hs), [Plotter.hs](exercises/plotter/Plotter.hs)
+
+- **Седмица 10 (21.12.2016)**  
+[map, filter, fold](lectures/09-map-fold-filter/map-fold-filter.md)  
+Задачи от часа: [Histogram](exercises/histogram/Histogram.md) ([histogram](exercises/histogram)) чрез `map`/`filter`/`fold`
 
 ### Допълнителни материали
 [Литература, среда и др.](lectures/00-setup/extra.md)

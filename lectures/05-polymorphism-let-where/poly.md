@@ -115,7 +115,7 @@ ghci> :t ("Hi" ++ " all")
 elem :: a -> [a] -> Bool
 elem _ [] = False
 elem e (x:xs)
-  | x == e  = True
+  | x == e    = True
   | otherwise = elem e xs
 ```
 За съжаление това е невалидна функция в Haskell, защото сме допуснали, че можем да сравним `e` с елемент от списъка `x`.

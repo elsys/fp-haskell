@@ -95,7 +95,7 @@ False
 <br>
 
 **Синтаксис:**
-```hs     
+```hs
 data URL = URLPath  String
 --    |       |        |
 --   Type    Tag   the value

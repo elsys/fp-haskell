@@ -87,5 +87,4 @@ eval scope (Var name) = unbox (lookup name scope)
 
 eval _   (Constant x) = x
 ....
-
 ```
