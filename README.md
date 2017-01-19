@@ -52,6 +52,10 @@
 [map, filter, fold](lectures/09-map-fold-filter/map-fold-filter.md)  
 Задачи от часа: [Histogram](exercises/histogram/Histogram.md) ([histogram](exercises/histogram)) чрез `map`/`filter`/`fold`
 
+- **Седмица 11 (19.01.2017)**  
+[Currying & Composition](lectures/10-composition-currying/composition-currying.md)  
+Задачи от часа: [Функционална геометрия](exercises/funcgeo/funcgeo.md) ([funcgeo](exercises/funcgeo))
+
 ### Допълнителни материали
 [Литература, среда и др.](lectures/00-setup/extra.md)
 
