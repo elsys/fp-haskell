@@ -36,10 +36,10 @@ fish3 :: Diagram B -> Diagram B
 fish3 i = rot . rot . rot . fish2 $ i
 
 fishT :: Diagram B -> Diagram B
-fishT i = undefined
+fishT = undefined
 
 fishU :: Diagram B -> Diagram B
-fishU i = undefined
+fishU = undefined
 
 quartet p q r s b = centerXY $ p `atop` fixX q `atop` fixY (r `atop` fixX s)
                   where

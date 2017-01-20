@@ -5,8 +5,13 @@
 <!--
 ```hs
 import Data.List (isInfixOf)
+import Prelude hiding ( (.) )
 
+contains :: (Eq a) => [a] -> [a] -> Bool
 contains = isInfixOf
+
+intToDouble :: Int -> Double
+intToDouble = fromInteger . toInteger
 ```
 -->
 
@@ -43,7 +48,7 @@ cat composition-currying.md | grep Curry | wc -l
 <br>В `haskell`
 ```hs
 curryLns :: String -> Int
-curryLns = length . filter (contains "Curry") . unlines 
+curryLns = length . filter (contains "Curry") . lines 
 ```
 
 ---
@@ -91,16 +96,16 @@ curryLns = length . filter (contains "Curry") . unlines
 <br>
 
 ```hs
-add :: Int -> Int
+add :: Int -> Int -> Int
 add x y = x + y
 
-addLam :: Int -> Int
+addLam :: Int -> Int -> Int
 addLam = \x -> \y -> x + y
 ```
 
 ---
 
-## Curryin - пример
+## Currying - пример
 
 ```hs     
 add :: Int -> Int
@@ -150,7 +155,7 @@ apply f a = f a
 Ако имаме функциите:
 ```hs
 g :: Int -> Double
-g = fromInteger
+g = intToDouble
 ```
 ```hs
 f :: Double -> String
@@ -186,16 +191,16 @@ test' x = (show . length) x
 ## Composition - Примери
 
 ```hs
-> (length . unwords) "Hello world"
+> (length . words) "Hello world"
 2
 
-> map (even . length) ["hello", "world"]
+> map (even . length) ["Hello", "world!"]
 [False, True]
 
 > filter (odd . (+ 1)) [1..5]
 [2, 4]
 
-> head . filter (elem 'e') . unwords $ "hello world"
+> head . filter (elem 'e') . words $ "hello world"
 "hello"
 ```
 
@@ -226,16 +231,16 @@ mul x y = x * y
 
 
 ```hs
-> length . unwords $ "hi 5"
--- OK!  (length . unwords) "hi 5"
+> length . words $ "hi 5"
+-- OK!  (length . words) "hi 5"
 2
 
-> length $ unwords $ "hi 5"
--- OK!  length (unwords "hi 5")
+> length $ words $ "hi 5"
+-- OK!  length (words "hi 5")
 2
 
-> (length $ unwords) $ "hi 5"
--- Fail!  (length unwords) <- unwords is not an array!
+> (length $ words) $ "hi 5"
+-- Fail!  (length words) <- words is not an array!
 ** Compile time error
 ```
 ```hs     
@@ -253,7 +258,7 @@ notCompose f g = f $ g -- nope, we try to (f g)
 myAdd = (+)
 
 > myAdd 3 4
-12
+7
 
 add42 = (+ 42)
 
@@ -275,7 +280,7 @@ vowels :: [Char]
 vowels = ['a', 'e', 'i', 'o', 'u']
 
 skipVowels :: String -> String
-skipVowels x = filter (`elem` vowels) x
+skipVowels x = filter (not . (`elem` vowels)) x
 ```
 
 ```hs

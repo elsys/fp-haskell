@@ -54,7 +54,7 @@
 
 - **Седмица 11 (19.01.2017)**  
 [Currying & Composition](lectures/10-composition-currying/composition-currying.md)  
-Задачи от часа: [Функционална геометрия](exercises/funcgeo/funcgeo.md) ([funcgeo](exercises/funcgeo))
+Задачи от часа: [Функционална геометрия](exercises/funcgeo/Funcgeo.md) ([funcgeo](exercises/funcgeo))
 
 ### Допълнителни материали
 [Литература, среда и др.](lectures/00-setup/extra.md)
