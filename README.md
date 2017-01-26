@@ -56,6 +56,11 @@
 [Currying & Composition](lectures/10-composition-currying/composition-currying.md)  
 Задачи от часа: [Функционална геометрия](exercises/funcgeo/Funcgeo.md) ([funcgeo](exercises/funcgeo))
 
+- **Седмица 11 (26.01.2017)**  
+[Входно-изходни операции](lectures/11-io/io.md)  
+Задачи от часа: [TicTacToe.hs](exercises/tic-tac-toe/TicTacToe.hs) ([tic-tac-toe](exercises/tic-tac-toe))
+
+
 ### Допълнителни материали
 [Литература, среда и др.](lectures/00-setup/extra.md)
 
