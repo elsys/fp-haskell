@@ -296,18 +296,18 @@ True
 
 ---
 
-## Изпускане на последенияте аргументи
+## Изпускане на последените аргументи
 
-```hs     
-skipVowels :: String -> String
-skipVowels x = filter (`elem` vowels) x
+```hs
+onlyVowels :: String -> String
+onlyVowels x = filter (`elem` vowels) x
 ```
 
 Е същото като:
 
 ```hs     
-skipVowels' :: String -> String
-skipVowels' = filter (`elem` vowels)
+onlyVowels' :: String -> String
+onlyVowels' = filter (`elem` vowels)
 ```
 
 Тъй като
