@@ -60,6 +60,9 @@
 [Входно-изходни операции](lectures/11-io/io.md)  
 Задачи от часа: [TicTacToe.hs](exercises/tic-tac-toe/TicTacToe.hs) ([tic-tac-toe](exercises/tic-tac-toe))
 
+- **Седмица 12 (01.02.2017)**  
+Задачи от часа: [Decrypt.hs](exercises/decrypt/Decrypt.hs) ([decrypt](exercises/decrypt))
+
 
 ### Допълнителни материали
 [Литература, среда и др.](lectures/00-setup/extra.md)

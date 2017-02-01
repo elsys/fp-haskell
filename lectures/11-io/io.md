@@ -32,7 +32,28 @@ main = putStrLn "Hello"
 
 ---
 
-## IO в Haskell
+## Ключови функции
+
+```hs     
+-- reads a line from stdin
+getLine  :: IO String
+
+-- writes a string to stdout
+putStr   :: String -> IO ()
+putStrLn :: String -> IO ()
+```
+```hs     
+-- a "FilePath" is just a synonim for String
+-- makes signatures more obvious
+type FilePath = String
+
+readFile  :: FilePath -> IO String
+writeFile :: FilePath -> String -> IO ()
+```
+
+---
+
+## Групиране на действия
 
 По подразбиране main може да изпълни само едно действие. За да групираме няколко използваме `dо` синтаксис.
 
@@ -44,9 +65,9 @@ main = do
 
 ---
 
-## IO в Haskell
+## Използване на резултата от IO действие
 
-Дейстивята с тип `IO a` освен странични ефекти, могат да продуцират произволни стойности.
+Действията с тип `IO a` освен странични ефекти, могат да продуцират произволни стойности.
 
 За да се доберем до стойността, използваме оператора `<-` в `do` block. Той присвоява резултата на променлива.
 
@@ -63,7 +84,7 @@ main = do
 
 ---
 
-## IO в Haskell - връщане на резултат
+## Връщане на резултат
 
 За да върнем резултат използваме `return :: a -> IO a`.
 
@@ -83,7 +104,7 @@ main = do len <- fileLength "test.hs"
 
 ---
 
-## IO в Haskell
+## Връщание на unit
 
 Понякога се налага да създадем *кухо* действие. За целта ползваме `return ()`
 
